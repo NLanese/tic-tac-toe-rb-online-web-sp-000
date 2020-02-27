@@ -36,11 +36,6 @@ def turn(board, turn_count)
   index = gets.strip
   index = input_to_index(index)
   if (valid_move?(board, index))
-    if (turn_count % 2 == 0)
-      player = "X"
-    else
-      player = "O"
-    end
     move(board, index, player)
   else
     puts "Invalid move!"
@@ -108,6 +103,13 @@ def draw?(board)
   end
 end
 
+def turn_count(board)
+  turns = 0
+  board.each do |spot|
+  if (spot == "X" || spot == "O")
+    turns += 1  
+end
+
 def over?(board)
   if (draw?(board) || won?(board))
     return true
@@ -130,7 +132,6 @@ def play(board)
   turn_count = 0
   until (over?(board))
     turn(board, turn_count)
-    turn_count += 1
   end
   if (draw?(board))
     puts "Cat's Game!"
