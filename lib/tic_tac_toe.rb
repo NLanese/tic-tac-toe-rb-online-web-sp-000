@@ -113,21 +113,23 @@ def over?(board)
     return false
   end #ends seeing if won or draw
 end #ends method
-def winner(board)
-  winning_array = won?(board)
-  if winning_array == nil
-    return nil
-  end #ends checking winning array
-  space = winning_array[0]
-  return board[space]
-end #ends method
-#def play(board)
-#  until (over?(board))
-#    turn(board)
-#  end #ends loop
-#  if (draw?(board))
-#    puts "Cat's Game!"
-#  elsif (won?(board))
-#    puts "Congratulations #{winner(board)}!"
-#  end #ends checking how game is won
+
+#def winner(board)
+#  winning_array = won?(board)
+#  if winning_array == nil
+#    return nil
+#  end #ends checking winning array
+#  space = winning_array[0]
+#  return board[space]
 #end #ends method
+
+def play(board)
+  until (over?(board))
+    turn(board)
+  end #ends loop
+  if (draw?(board))
+    puts "Cat's Game!"
+  elsif (won?(board))
+    puts "Congratulations #{winner(board)}!"
+  end #ends checking how game is won
+end #ends method
