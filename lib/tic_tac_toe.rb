@@ -132,9 +132,9 @@ def play(board)
     turn(board, turn_count)
     turn_count += 1
   end
-  if (draw?)
+  if (draw?(board))
     puts "The game has ended in a draw!"
-  elsif (won?)
+  elsif (won?(board))
     puts "The game has been won by player #{winner(board)}!"
   end
 end
