@@ -91,14 +91,17 @@ def draw?(board)
     return false
   end #ends to see if board is full
 end #ends method
-#def turn_count(board)
-#  turns = 0
-#  board.each do |spot|
-#  if (spot == "X" || spot == "O")
-#    turns += 1
-#  end #ends counting filled spots
-#  return turns
-#end #ends method
+
+def turn_count(board)
+  turns = 0
+  board.each do |spot|
+    if (spot == "X" || spot == "O")
+    turns += 1
+    end #ends counting filled spots
+  end
+  return turns
+end #ends method
+
 def current_player(board)
   if (turn_count(board) % 2 == 0)
     return "X"
