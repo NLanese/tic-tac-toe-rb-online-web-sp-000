@@ -22,6 +22,22 @@ def valid_move?
   end
 end
 
+def move(board, input, player)
+  board[input] = player
+end
+
+def turn(board)
+  puts "Please enter 1-9: "
+  index = gets.strip
+  index = input_to_index(index)
+  if (valid_move?(board, index))
+    move(board, index)
+  else
+    puts "Invalid move!"
+    turn(board)
+  end
+end
+
 WIN_COMBINATIONS = [
   [0, 1, 2], #WC[0]
   [3, 4, 5], #WC[1]
