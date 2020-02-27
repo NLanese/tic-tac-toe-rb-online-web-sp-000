@@ -112,6 +112,14 @@ def turn_count(board)
   return turns
 end
 
+def current_player(board)
+  if (turn_count(board) % 2 == 0)
+    return "X"
+  else
+    return "O"
+  end
+end
+
 def over?(board)
   if (draw?(board) || won?(board))
     return true
