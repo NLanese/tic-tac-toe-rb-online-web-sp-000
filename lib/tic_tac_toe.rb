@@ -44,7 +44,7 @@ def turn(board, turn_count)
     move(board, index, player)
   else
     puts "Invalid move!"
-    turn(board)
+    turn(board, turn_count)
   end
 end
 
