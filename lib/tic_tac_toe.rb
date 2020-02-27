@@ -127,8 +127,8 @@ def winner(board)
 end
 
 def play(board)
+  turn_count = 0
   until (over?(board))
-    turn_count = 0
     turn(board, turn_count)
     turn_count += 1
   end
