@@ -108,6 +108,8 @@ def turn_count(board)
   board.each do |spot|
   if (spot == "X" || spot == "O")
     turns += 1
+  end
+  return turns
 end
 
 def over?(board)
