@@ -26,12 +26,17 @@ def move(board, input, player)
   board[input] = player
 end
 
-def turn(board)
+def turn(board, turn_count)
   puts "Please enter 1-9: "
   index = gets.strip
   index = input_to_index(index)
   if (valid_move?(board, index))
-    move(board, index)
+    if (turn_count % 2 == 0)
+      player = "X"
+    else
+      player = "O"
+    end
+    move(board, index, player)
   else
     puts "Invalid move!"
     turn(board)
@@ -114,4 +119,17 @@ def winner(board)
   end
   space = winning_array[0]
   return board[space]
+end
+
+def play(board)
+  until (over?(board))
+    turn_count = 0
+    turn(board, turn_count)
+    turn_count += 1
+  end
+  if (draw?)
+    puts "The game has ended in a draw!"
+  elsif (won?)
+    puts "The game has been won by player #{winner(board)}!" 
+  end
 end
