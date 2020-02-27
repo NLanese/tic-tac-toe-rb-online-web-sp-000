@@ -36,7 +36,7 @@ def turn(board, turn_count)
   index = gets.strip
   index = input_to_index(index)
   if (valid_move?(board, index))
-    move(board, index, player)
+    move(board, index, current_player(board))
   else
     puts "Invalid move!"
     turn(board, turn_count)
