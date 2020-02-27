@@ -31,7 +31,7 @@ def move(board, input, player)
   board[input] = player
 end
 
-def turn(board, turn_count)
+def turn(board)
   puts "Please enter 1-9: "
   index = gets.strip
   index = input_to_index(index)
@@ -39,7 +39,7 @@ def turn(board, turn_count)
     move(board, index, current_player(board))
   else
     puts "Invalid move!"
-    turn(board, turn_count)
+    turn(board)
   end
 end
 
@@ -139,9 +139,8 @@ def winner(board)
 end
 
 def play(board)
-  turn_count = 0
   until (over?(board))
-    turn(board, turn_count)
+    turn(board)
   end
   if (draw?(board))
     puts "Cat's Game!"
