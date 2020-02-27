@@ -121,13 +121,13 @@ def winner(board)
   space = winning_array[0]
   return board[space]
 end #ends method
-def play(board)
-  until (over?(board))
-    turn(board)
-  end #ends loop
-  if (draw?(board))
-    puts "Cat's Game!"
-  elsif (won?(board))
-    puts "Congratulations #{winner(board)}!"
-  end #ends checking how game is won
-end #ends method
+#def play(board)
+#  until (over?(board))
+#    turn(board)
+#  end #ends loop
+#  if (draw?(board))
+#    puts "Cat's Game!"
+#  elsif (won?(board))
+#    puts "Congratulations #{winner(board)}!"
+#  end #ends checking how game is won
+#end #ends method
