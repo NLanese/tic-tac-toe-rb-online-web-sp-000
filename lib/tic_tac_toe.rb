@@ -150,4 +150,3 @@ def play(board)
     puts "Error"
   end
 end
-end
